@@ -1,0 +1,16 @@
+---
+ - name: configure network interfaces
+   hosts: cisco_routers
+   gather_facts: false
+
+   tasks: 
+     - name: configure loopback 55
+       cisco.ios.ios_config:
+         lines:
+          - description created by ansible for buddi
+          - ip address {{ loopback_ip }} {{ loopback_mask }}
+         parents: interface Loopback55
+
+     - name: save the currunt config
+       cisco.ios.ios_config: 
+         save_when: modified
