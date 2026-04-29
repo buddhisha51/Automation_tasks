@@ -1,0 +1,10 @@
+---
+new_loopbacks:
+  - id: 55
+    ip: 172.16.10.10
+    subnet: 255.255.255.0
+    description: created by ansible for testing
+  - id: 65
+    ip: 172.16.100.10
+    subnet: 255.255.255.0
+    description: created by ansible for testing

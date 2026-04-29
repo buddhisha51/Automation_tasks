@@ -1,0 +1,12 @@
+---
+- name: configure aruba switch
+  hosts: Delko_switches
+  gather_facts: false
+
+  tasks:
+    - name: create multiple vlans with a loop
+      arubanetworks.aoscx.aoscx_config:
+        lines:
+          - name: {{item.name}}
+        parents: vlan {{item.id}}
+      loop: "{{new_VLANs}}"

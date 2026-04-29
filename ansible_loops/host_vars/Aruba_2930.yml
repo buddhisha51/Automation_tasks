@@ -1,0 +1,6 @@
+---
+new_VLANs:
+  - id: 100
+    name: sales
+  - id: 200
+    name: IT
