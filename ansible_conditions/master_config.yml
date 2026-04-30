@@ -1,0 +1,17 @@
+---
+- name: Intelligent Multi-Vendor Configuration
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Configure Cisco Hostname
+      cisco.ios.ios_config:
+        lines:
+          - hostname CORE-ROUTER
+      when: ansible_network_os == 'cisco.ios.ios'
+
+    - name: Configure Aruba Hostname
+      arubanetworks.aos_switch.arubaoss_config:
+        lines:
+          - hostname ACCESS-SWITCH
+      when: ansible_network_os == 'arubanetworks.aos_switch.arubaoss'
