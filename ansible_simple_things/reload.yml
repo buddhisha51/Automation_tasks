@@ -1,0 +1,11 @@
+- name: reload router
+  hosts: router1
+  gather_facts: false
+
+  tasks:
+    - name: Execute reload command
+      cisco.ios.ios_command:
+        commands:
+          - command: 'reload'
+            prompt: 'confirm'
+            answer: "\r"
