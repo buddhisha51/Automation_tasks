@@ -1,0 +1,12 @@
+---
+- name: deploy vlans and mots to 2930 via Jinja2
+  hosts: TechSW1
+  gather_facts: false
+
+  tasks:
+    - name: Push Jinja Template to Aruba (Bypassing Vendor Bug)
+      cli_config:
+        config: "{{ lookup('template', 'templates/Aruba2930.j2') }}"
+   # - name: jinja pointer 
+    #  arubanetworks.aos_switch.arubaoss_config:
+    #   src: templates/Aruba2930.j2

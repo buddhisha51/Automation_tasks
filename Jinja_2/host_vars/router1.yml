@@ -1,0 +1,10 @@
+---
+ospf_process: 10
+
+loopbacks:
+  - name: Loopback11
+    ip: 10.0.11.1
+    mask: 255.255.255.255
+  - name: Loopback12
+    ip: 10.0.12.1
+    mask: 255.255.255.255

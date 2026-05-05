@@ -1,0 +1,9 @@
+---
+- name: Deploy Configuration via Jinja2 Templates
+  hosts: router1
+  gather_facts: false
+
+  tasks: 
+   - name: ospf configurations
+     cisco.ios.ios_config:
+       src: templates/ciscoOSPF.j2

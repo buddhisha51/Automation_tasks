@@ -1,0 +1,8 @@
+router ospf {{ospf_process}}
+ network 10.0.0.0 0.255.255.255 area 0
+
+{% for int in loopbacks %}
+interface {{ int.name }}
+ ip addr {{int.ip}} {{int.mask}}
+ ip ospf {{ospf_process}} area 0
+{%endfor%}
